@@ -9,7 +9,7 @@ def fizzbuzz(number)
   i = 1
 
   until i > number
-    if is_dividable(i, 3) && is_dividable(i, 5)
+    if is_dividable(i, 3) && is_dividable(i, 5) # is_dividable(i, 15)
       puts "Fizzbuzz"
     elsif is_dividable(i, 3)
       puts "Fizz"
@@ -20,4 +20,4 @@ def fizzbuzz(number)
   end
 end
 
-puts fizzbuzz(25)
+puts fizzbuzz(100)
