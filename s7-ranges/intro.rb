@@ -15,3 +15,5 @@ p numbers.last
 p numbers.last(1) # returns the last element in array
 p numbers.last(10) # returns array of 10 first elements of Range
 p nums.last(10) # returns array of 10 first elements of Range
+
+p (1..10).first(5) # to avoid error on treating 10 as integer
