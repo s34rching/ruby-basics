@@ -15,11 +15,9 @@ p str.rindex("o", 9) # => 7
 # Exercise
 
 def get_custom_index(str, match)
-  match_index = 0
-
   if str.include?(match)
     str.chars.each_with_index do |char, index|
-      return match_index = index if str[index, match.length] == match
+      return index if str[index, match.length] == match
     end
   end
   return nil
