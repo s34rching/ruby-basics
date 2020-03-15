@@ -20,4 +20,4 @@ def custom_squeeze(str)
   return squeezed.join("")
 end
 
-p custom_squeeze(sentence)
+p custom_squeeze(sentence) == sentence.squeeze
