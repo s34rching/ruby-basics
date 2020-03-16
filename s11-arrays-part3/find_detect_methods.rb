@@ -6,3 +6,7 @@ p alphabetical.select { |word| word.length > 5 }
 p alphabetical.find { |word| word.length > 5 }
 result = alphabetical.detect { |word| word.length > 5 }
 p result
+
+# get last matching element
+
+p alphabetical.reverse.find { |word| word.length > 5 }
