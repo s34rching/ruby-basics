@@ -25,3 +25,5 @@ end
 p calculate_total_2(bill)
 p calculate_total_2(bill_2)
 p calculate_total_2({ :tax => 0.1, :price => 144.01, :tip => 0.15 })
+p calculate_total_2( :tax => 0.1, :price => 144.01, :tip => 0.15 ) # works
+p calculate_total_2 :tax => 0.1, :price => 144.01, :tip => 0.15 # works
