@@ -11,7 +11,7 @@ File.open(file_path, "w") do |file| # "w" mode overwrites content
   file.print(phrase_2)
 end
 
-File.open(file_path, "a") do |file| # "w" mode append new content
+File.open(file_path, "a") do |file| # "a" mode append new content
   file.puts(phrase)
   file.write(phrase_1)
   file.print(phrase_2)
