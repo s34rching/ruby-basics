@@ -4,9 +4,9 @@ class Gadget
   attr_writer :password # set
   attr_reader :production_number # get
 
-  def initialize
-    @username = "User #{rand(1..1000)}"
-    @password = "topsecret"
+  def initialize(username, password = "12345")
+    @username = username
+    @password = password
     @production_number = "#{rand(325..1254)}-#{rand(744..15555)}-#{rand(7897..1215456)}"
   end
 
@@ -15,9 +15,19 @@ class Gadget
   end
 end
 
-phone = Gadget.new
-p phone.username
-p phone.production_number
-p phone.password = "qwerty"
-p phone.username = "Just a User"
-p phone
+g1 = Gadget.new("User#1", "qwerty123")
+g2 = Gadget.new("User#2", "qwerty1234")
+g3 = Gadget.new("User#3", "qwerty12345")
+g4 = Gadget.new("User#4")
+
+p g1.production_number
+p g1
+
+p g2.password = "topsecret"
+p g2
+
+p g3.username
+p g3
+
+p g4.username = "Just a User"
+p g4
