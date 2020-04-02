@@ -8,7 +8,16 @@ class Gadget
   def to_s
     "Gadget '#{@production_number}' belongs to '#{@username}'. It is made from #{self.class}. ID - #{self.object_id}"
   end
+
+  def username
+    @username
+  end
+
+  def production_number
+    @production_number
+  end
 end
 
 phone = Gadget.new
-p phone.to_s # => "Gadget '646-4514-1013319' belongs to 'User 313'. It is made from the Gadget. ID - 70113126660360"
+p phone.username
+p phone.production_number
