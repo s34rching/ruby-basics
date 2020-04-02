@@ -2,19 +2,12 @@ class Gadget
 
 end
 
-phone = Gadget.new
-laptop = Gadget.new
-microwave = Gadget.new
+shiny = Gadget.new
+flashy = Gadget.new
 
-p phone # place in memory => #<Gadget:0x00007fd8bb02bcf0>
-p laptop # place in memory => #<Gadget:0x00007fd8bb02bcc8>
-p microwave # place in memory => #<Gadget:0x00007fd8bb02bca0>
+p shiny.object_id == flashy.object_id # false
 
-p phone.class # => Gadget
-p phone.class.superclass # => Object
-p phone.class.superclass.superclass # => BasicObject
-p phone.methods.sort
-p phone.is_a?(Gadget)
-p phone.respond_to?(:class) # true
-p phone.respond_to?(:methods) # true
-p phone.respond_to?(:length) # false
+glossy = shiny
+
+p glossy == shiny # true
+p glossy.object_id == shiny.object_id # true
