@@ -11,11 +11,12 @@ module LengthConversion
     feet * 12
   end
 
-  def miles_to_centimeters(miles)
-    inches = miles_to_inches
+  def self.miles_to_centimeters(miles)
+    inches = miles_to_inches(miles)
     inches * 2.54
   end
 end
 
 p LengthConversion::WEBSITE
 p LengthConversion.miles_to_inches(100)
+p LengthConversion.miles_to_centimeters(1000)
