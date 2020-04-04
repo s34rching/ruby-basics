@@ -18,7 +18,3 @@ module Circle
     PI * (radius ** 2)
   end
 end
-
-p Circle.area(10)
-p Square.area(10)
-p Rectangle.area(10, 20)
