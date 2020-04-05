@@ -1,7 +1,9 @@
+require_relative "structs"
+
 class Gadget
 
   attr_accessor :username
-  attr_reader :production_number
+  attr_reader :production_number, :apps
 
   def initialize(username, password)
     @username = username
@@ -18,8 +20,14 @@ class Gadget
     @password = new_password if validate_password(new_password)
   end
 
-  def add_app(app_name)
-    apps << app_name
+  def install_app(app_name)
+    app = AppStore.find_app(app_name)
+    apps << app
+  end
+
+  def delete_app(app_name)
+    app = apps.find { |installed_app| installed_app.name == app_name }
+    apps.delete(app) if apps.include?(app)
   end
 
   def reset(username, password)
@@ -30,7 +38,7 @@ class Gadget
 
   private
 
-  attr_accessor :apps
+  attr_writer :apps
 
   def generate_production_number
     production_range = 10000..999999
@@ -45,9 +53,10 @@ class Gadget
 end
 
 phone = Gadget.new("user", "password1")
-phone.add_app("Instagram")
-phone.add_app("G Drive")
-phone.add_app("Any messenger")
-p phone # => #<Gadget:0x00005597c9f75ad8 @username="user", @password="password1", @production_number="atl-678033-148448", @apps=["Instagram", "G Drive", "Any messenger"]>
-phone.reset("user #2", "topsecret12")
-p phone # => #<Gadget:0x00005619df955778 @username="user #2", @password="topsecret12", @production_number="nyc-775543-556614", @apps=[]>
+phone.install_app("Twitter")
+phone.install_app("Weather")
+phone.install_app("Chat")
+p phone
+phone.delete_app("Chat")
+phone.delete_app("Chat")
+p phone
