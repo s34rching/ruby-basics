@@ -8,7 +8,7 @@ class Employee
   end
 
   def introduce
-    "Hi, my name is #{name}. My age is #{age}"
+    "Hi, my name is #{name}. My age is #{age}."
   end
 end
 
