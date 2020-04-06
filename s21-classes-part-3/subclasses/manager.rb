@@ -1,6 +1,8 @@
 require_relative "employee"
 
 class Manager < Employee
-end
 
-Dan = Manager.new("Dan", 35)
+  def yell
+    "Who's the boss? I'm the boss"
+  end
+end
