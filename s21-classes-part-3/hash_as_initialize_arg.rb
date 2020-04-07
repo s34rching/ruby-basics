@@ -28,3 +28,8 @@ p another_candidate
 
 another_one_candidate = Candidate.new("Mr. K", age: 30, hobby: "horror movies")
 p another_one_candidate
+
+amount1 = Chance.random({ min: 1, max: prod1MaxQuantity(fixture/api) })
+amount2 = Chance.random({ min: 1, max: prod2MaxQuantity(fixture/api) })
+
+total(UI) = price1(UI) * amount1 + price2(UI) * amount2
